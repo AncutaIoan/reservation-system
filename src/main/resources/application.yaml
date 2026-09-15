@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: reservation-system
+  datasource:
+    url: jdbc:postgresql://localhost:5432/reservation_db
+    username: reservation_user
+    password: reservation_password
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+  flyway:
+    enabled: true
