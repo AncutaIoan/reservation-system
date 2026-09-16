@@ -16,7 +16,10 @@ public class SeatService {
     }
 
 
-    public List<SeatEntity> getSeatsFor(UUID venueId) {
-        return seatRepository.findAllByVenueId(venueId);
+    public List<Seat> getSeatsFor(UUID venueId) {
+        return seatRepository.findAllByVenueId(venueId)
+                                .stream()
+                                .map(Seat::new)
+                                .toList();
     }
 }

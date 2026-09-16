@@ -17,7 +17,7 @@ public class VenueController {
     }
 
     @GetMapping
-    public List<VenueEntity> getAllVenues() {
+    public List<Venue> getAllVenues() {
         return venueService.getAllVenues();
     }
 }

@@ -19,7 +19,7 @@ public class SeatController {
     }
 
     @GetMapping("/venue/{venueId}")
-    public List<SeatEntity> getSeatsForVenue(@PathVariable UUID venueId) {
+    public List<Seat> getSeatsForVenue(@PathVariable UUID venueId) {
         return seatService.getSeatsFor(venueId);
     }
 }

@@ -14,7 +14,10 @@ public class VenueService {
         this.venueRepository = venueRepository;
     }
 
-    public List<VenueEntity> getAllVenues() {
-        return venueRepository.findAll();
+    public List<Venue> getAllVenues() {
+        return venueRepository.findAll()
+                .stream()
+                .map(Venue::new)
+                .toList();
     }
 }
