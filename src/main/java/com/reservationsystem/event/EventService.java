@@ -19,4 +19,11 @@ public class EventService {
                 .map(Event::new)
                 .toList();
     }
+
+    public List<Event> findBy(String name) {
+        return eventRepository.findAllByName(name)
+                .stream()
+                .map(Event::new)
+                .toList();
+    }
 }
