@@ -26,4 +26,15 @@ public class EventService {
                 .map(Event::new)
                 .toList();
     }
+
+    public Event createEvent(CreateEventRequest request) {
+        EventEntity event = new EventEntity(
+                request.venueId(),
+                request.name(),
+                request.description(),
+                request.startsAt(),
+                request.endsAt()
+        );
+        return new Event(eventRepository.save(event));
+    }
 }

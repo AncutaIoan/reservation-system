@@ -10,6 +10,11 @@ import java.util.UUID;
 @Table(name = "reservation")
 public class ReservationEntity {
 
+    public static final String HELD = "HELD";
+    public static final String CONFIRMED = "CONFIRMED";
+    public static final String EXPIRED = "EXPIRED";
+    public static final String CANCELLED = "CANCELLED";
+
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
@@ -43,7 +48,7 @@ public class ReservationEntity {
         this.userId = userId;
         this.eventId = eventId;
         this.expiresAt = expiresAt;
-        this.status = "HELD";
+        this.status = HELD;
     }
 
     public UUID getId() {
